@@ -1,0 +1,505 @@
+/****************************************
+* top画像スライドショー
+*****************************************/
+
+
+#slideshow img {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 8;
+    opacity: 0.0;
+}
+#slideshow img.active {
+    z-index: 10;
+    opacity: 1.0;
+}
+#slideshow img.last-active {
+    z-index: 9;
+}
+#slideshow {
+    position: relative;
+    width:  100%; /* 画像の横幅に合わせて記述 */
+    height: 100%; /* 画像の高さに合わせて記述 */
+}
+
+/****************************************
+* リセットCSS
+*****************************************/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+input, button, select, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font: inherit;
+    outline: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/****************************************
+* フォント設定
+*****************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+html, body {
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/****************************************
+* ヘッダー
+*****************************************/
+
+.block-header {
+    margin: 10px 0;
+    padding: 0 20px 10px;
+    box-shadow: 0px 10px 10px -5px rgba(204,204,204,0.3);
+}
+
+.block-header a {
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.header__inner {
+    max-width: 1152px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header__navgroup {
+    margin-left: auto;
+    display: flex;
+    flex: none;
+    align-items: center;
+}
+
+.header__navgroup>*+* {
+    margin-left: 60px;
+}
+
+.header__navitem a {
+    color: #000;
+    font-weight: bold;
+}
+
+.header__contact {
+    background-color: #174CAF;
+    border-radius: 50px;
+    padding: 8px 40px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+}
+
+.header__contact a {
+    color: #fff;
+}
+
+.header__contact i {
+    margin-right: 5px;
+}
+
+.hamburger__btn {
+    display: none;
+    margin: 0 0 0 auto;
+    color: #174CAF;
+}
+
+.hamburger__btn:hover {
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    width: 70%;
+    height: 100vh;
+    background-color: #ffffffdd;
+    border-left: 1px solid #ccc;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.hamburger__modal {
+    display: none;
+    background-color: #000000aa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9998;
+}
+
+.a__btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width:1200px) {
+    .block-header a {
+        font-size: 15px;
+        color: #000;
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+}
+
+
+@media screen and (max-width:480px){
+    .hamburger__btn {
+        display: block;
+    }
+    .header__navgroup {
+        padding-top: 10%;
+    }
+    .header__navitem {
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+/****************************************
+* 表題設定
+*****************************************/
+
+.content__header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content__header__inner {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #174CAF;
+    display: inline-block;
+}
+
+.content__header__border {
+    text-align: center;
+    margin: 10px auto;
+    width: 100%;
+    border-bottom: 3px solid #174CAF;
+}
+
+.content__items {
+    padding: 50px 0 70px;
+    width: 100%;
+}
+
+.content__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+/****************************************
+* Concept設定
+*****************************************/
+
+.concept__content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.concept__img {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.concept__text {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding: 40px;
+}
+
+.concept__text__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.concept__text__dis {
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 480px){
+    .concept__img {
+        width: 100%;
+        display: block;
+        padding: 0;
+    }
+    .concept__text {
+        width: 100%;
+        display: block;
+    }
+}
+
+.top {
+    position: relative;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.br__pc::before {
+    content: "\A";
+    white-space: pre;
+}
+
+@media screen and (max-width: 480px) {
+    .top {
+        height: 60vh;
+    }
+    .br__sp::before .br__pc::before {
+        content: "\A\A";
+        white-space: pre;
+    }
+}
+
+/****************************************
+* Works設定
+*****************************************/
+
+.works {
+    background-color: #A0BAEA;
+}
+
+.works__content {
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+.works__card {
+    width: 29%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    margin: 0 10px;
+    box-shadow: 0 0 5px 5px rab(0 0 0 / 3%);
+}
+
+.works__card__title {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 20px;
+}
+
+.works__card__dis {
+    padding: 0 20px 40px;
+    font-size: 0.9rem;
+}
+
+.works__button {
+    background:#174CAF;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid #aaa;
+    color: white;
+    font-weight: 600;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 15px 40px;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .works__card {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+
+/****************************************
+* Location設定
+*****************************************/
+
+.location__content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location__img {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.location__text {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding: 40px;
+}
+
+.location__text__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.location__text__dis {
+    font-size: 1.5rem;
+}
+
+.location__adress {
+    font-size: 1rem;
+    line-height: 2.5rem;
+}
+
+@media screen and (max-width: 480px){
+    .location__img {
+        width: 100%;
+        display: block;
+        padding: 0;
+    }
+    .location__text {
+        width: 100%;
+        display: block;
+    }
+}
+
+/****************************************
+* Contact設定
+*****************************************/
+
+.contact {
+    background-color: #A0BAEA;
+}
+
+.contact__text {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 30px auto;
+}
+
+.contact__button {
+    max-width: 350px;
+    position: relative;
+    color: #fff;
+    background-color: #174CAF;
+    border-radius: 50px;
+    padding: 15px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 480px){
+    .content__text {
+        font-size: 1.4rem;
+    }
+}
+
+footer {
+    text-align: center;
+    position: relative;
+}
+
+footer img {
+    width: 100vw;
+}
+
+footer p {
+    color: white;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    margin: auto;
+}
+
+@media screen and (max-width: 480px){
+    footer p {
+        font-size: 8px;
+        color: white;
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        margin: auto;
+    }
+}
