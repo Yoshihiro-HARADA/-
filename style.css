@@ -225,6 +225,29 @@ header {
 }
 
 /****************************************
+* Top設定
+*****************************************/
+
+.top {
+    position: relative;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+.top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .top {
+        height: 30vh;
+    }
+}
+
+/****************************************
 * 表題設定
 *****************************************/
 
@@ -305,33 +328,6 @@ header {
     }
 }
 
-.top {
-    position: relative;
-    margin: 0 auto;
-    height: 400px;
-}
-
-.top img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.br__pc::before {
-    content: "\A";
-    white-space: pre;
-}
-
-@media screen and (max-width: 480px) {
-    .top {
-        height: 60vh;
-    }
-    .br__sp::before .br__pc::before {
-        content: "\A\A";
-        white-space: pre;
-    }
-}
-
 /****************************************
 * Works設定
 *****************************************/
@@ -399,10 +395,11 @@ header {
 }
 
 .location__img {
-    width: 48%;
+    width: 40%;
     display: inline-block;
     vertical-align: top;
-    padding: 20px;
+    padding: 40px;
+    margin-right: 20px;
 }
 
 .location__text {
@@ -410,7 +407,7 @@ header {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    padding: 40px;
+    padding: 20px;
 }
 
 .location__text__title {
@@ -421,6 +418,8 @@ header {
 
 .location__text__dis {
     font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .location__adress {
@@ -471,6 +470,10 @@ header {
         font-size: 1.4rem;
     }
 }
+
+/****************************************
+* footer設定
+*****************************************/
 
 footer {
     text-align: center;
