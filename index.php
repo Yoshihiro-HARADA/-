@@ -94,9 +94,9 @@
     </header>
     <div class="top">
         <p id="slideshow">
-            <img src="/portfolio/img/top1.png" alt="画像1" class="active">
-            <img src="/portfolio/img/top2.png" alt="画像2">
-            <img src="/portfolio/img/top3.png" alt="画像3">
+            <img src="img/top1.png" alt="画像1" class="active">
+            <img src="img/top2.png" alt="画像2">
+            <img src="img/top3.png" alt="画像3">
         </p>
     </div>
     <div id="concept" class="concept content__items">
@@ -109,7 +109,7 @@
             </div>
             <div class="concept__content">
                 <div class="concept__img">
-                    <img src="/portfolio/img/concept.png" alt="" class="">
+                    <img src="img/concept.png" alt="" class="">
                 </div>
                 <div class="concept__text">
                     <div class="concept__text__title">
@@ -136,7 +136,7 @@
             <div class="works__content">
                 <div class="works__card">
                     <div class="works__card__img">
-                        <img src="/portfolio/img/work1.png" alt="">
+                        <img src="img/work1.png" alt="">
                     </div>
                     <div class="works__card__title">
                         マンションA
@@ -150,7 +150,7 @@
                 </div>
                 <div class="works__card">
                     <div class="works__card__img">
-                        <img src="/portfolio/img/work2.png" alt="">
+                        <img src="img/work2.png" alt="">
                     </div>
                     <div class="works__card__title">
                         マンションB
@@ -164,7 +164,7 @@
                 </div>
                 <div class="works__card">
                     <div class="works__card__img">
-                        <img src="/portfolio/img/work3.png" alt="">
+                        <img src="img/work3.png" alt="">
                     </div>
                     <div class="works__card__title">
                         美術館N
@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class="location__img">
-                <img src="/portfolio/img/map.png" alt="" class="">
+                <img src="img/map.png" alt="" class="">
             </div>
         </div>
     </div>
@@ -230,12 +230,9 @@
             </div>
         </div>
     </div>
-    <footer>
-        
-    </footer>
     <footer class="footer">
         <div class="footer-main">
-            <img src="/portfolio/img/footer.jpg" alt="">
+            <img src="img/footer.jpg" alt="">
             <p>2022 © HARADA　Construction Inc.</p>
         </div>
     </footer>
