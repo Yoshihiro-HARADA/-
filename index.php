@@ -43,7 +43,7 @@
                 <div class="header__navitem_sp">
                     <a href="#">Location</a>
                 </div>
-                <div class="header__navitem header__contact">
+                <div class="header__navitem_sp header__contact">
                     <i class="fas fa-file-signature"></i>
                     Contact
                     <a class="a__btn" href="#"></a>
@@ -77,12 +77,12 @@
             });
 
             document.getElementById('hamburger__btn').addEventListener('click', function () {
-                nav.classList.add("add-block");
-                document.getElementById('hamburger__modal').classList.add("add-block");
+                nav.style.display = "block";
+                document.getElementById('hamburger__modal').style.display = "block";
             });
             document.getElementById('hamburger__modal').addEventListener('click', function () {
-                nav.classList.add("remove-block");
-                document.getElementById('hamburger__modal').classList.add("remove-block");
+                nav.style.display = "none";
+                document.getElementById('hamburger__modal').style.display = "none";
             });
         </script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
