@@ -133,6 +133,10 @@ header {
     align-items: center;
 }
 
+.header__navgroup_sp {
+    display: none;
+}
+
 .header__navgroup>*+* {
     margin-left: 60px;
 }
@@ -215,12 +219,18 @@ header {
     .hamburger__btn {
         display: block;
     }
-    .header__navgroup {
+    .hamburger__btn_sp {
+        display: block;
+    }
+    .header__navgroup_sp {
         padding-top: 10%;
     }
-    .header__navitem {
+    .header__navitem_sp {
         margin: 20px auto;
         text-align: center;
+    }
+    .header__navgroup {
+        display: none;
     }
 }
 
@@ -505,4 +515,12 @@ footer p {
         -webkit-transform: translateY(-50%) translateX(-50%);
         margin: auto;
     }
+}
+
+.add-block {
+    display: block;
+}
+
+.remove-block {
+    display: none;
 }

@@ -16,7 +16,7 @@
                     HARADA Construction
                 </a>
             </h1>
-            <div id="nav" class="header__navgroup">
+            <div id="" class="header__navgroup">
                 <div class="header__navitem">
                     <a href="#">Concept</a>
                 </div>
@@ -32,6 +32,23 @@
                     <a class="a__btn" href="#"></a>
                 </div>
                 <div class="hamburger__btn"></div>
+            </div>
+            <div id="nav" class="header__navgroup_sp">
+                <div class="header__navitem_sp">
+                    <a href="#">Concept</a>
+                </div>
+                <div class="header__navitem_sp">
+                    <a href="#">Works</a>
+                </div>
+                <div class="header__navitem_sp">
+                    <a href="#">Location</a>
+                </div>
+                <div class="header__navitem header__contact">
+                    <i class="fas fa-file-signature"></i>
+                    Contact
+                    <a class="a__btn" href="#"></a>
+                </div>
+                <div class="hamburger__btn_sp"></div>
             </div>
             <div id="hamburger__modal" class="hamburger__modal"></div>
             <div id="hamburger__btn" class="hamburger__btn">
@@ -60,12 +77,12 @@
             });
 
             document.getElementById('hamburger__btn').addEventListener('click', function () {
-                nav.style.display = "block";
-                document.getElementById('hamburger__modal').style.display = "block";
+                nav.classList.add("add-block");
+                document.getElementById('hamburger__modal').classList.add("add-block");
             });
             document.getElementById('hamburger__modal').addEventListener('click', function () {
-                nav.style.display = "none";
-                document.getElementById('hamburger__modal').style.display = "none";
+                nav.classList.add("remove-block");
+                document.getElementById('hamburger__modal').classList.add("remove-block");
             });
         </script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
