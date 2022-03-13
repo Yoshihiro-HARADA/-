@@ -11,20 +11,20 @@
 <body>
     <header>
         <div class="header__inner">
-            <h1 class="block-header">
+            <h3 class="block-header">
                 <a href="./index.html">
                     HARADA Construction
                 </a>
-            </h1>
+            </h3>
             <div id="" class="header__navgroup">
                 <div class="header__navitem">
-                    <a href="#">Concept</a>
+                    <a href="#Concept">Concept</a>
                 </div>
                 <div class="header__navitem">
-                    <a href="#">Works</a>
+                    <a href="#Works">Works</a>
                 </div>
                 <div class="header__navitem">
-                    <a href="#">Location</a>
+                    <a href="#Location">Location</a>
                 </div>
                 <div class="header__navitem header__contact">
                     <i class="fas fa-file-signature"></i>
@@ -59,14 +59,14 @@
         <script>
             var lastInnerWidth = document.documentElement.clientWidth; //window.innerWidthで現在の画面幅を取得
             var nav = document.getElementById('nav');
-            if (lastInnerWidth <= 480) { // 画面幅480px以下の場合
+            if (lastInnerWidth <= 520) { // 画面幅550px以下の場合
                 nav.classList.add('hamburger'); // クラス「hamburger」を追加
             }
 
             window.addEventListener("resize" , function () {
                 if (lastInnerWidth != document.documentElement.clientWidth) {
                     lastInnerWidth = document.documentElement.clientWidth;
-                    if (lastInnerWidth <= 480) {
+                    if (lastInnerWidth <= 520) {
                         if (!(nav.classList.contains('hamburger'))) {
                             nav.classList.add('hamburger');
                         }
